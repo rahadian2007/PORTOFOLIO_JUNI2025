@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: black;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Video Player</h2>
+
+  <!-- Video -->
+  <video id="videoPlayer">
+    <source src="vvpa.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <br>
+
+  <!-- Tombol kontrol -->
+  <button onclick="playVideo()">Play</button>
+  <button onclick="pauseVideo()">Pause</button>
+  <button onclick="stopVideo()">Stop</button>
+
+  <script>
+    const video = document.getElementById("videoPlayer");
+
+    function playVideo() {
+      video.play();
+    }
+
+    function pauseVideo() {
+      video.pause();
+    }
+
+    function stopVideo() {
+      video.pause();
+      video.currentTime = 0; // kembali ke awal
+    }
+  </script>
+
+</body>
+</html>
